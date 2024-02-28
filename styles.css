@@ -1,0 +1,15 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-product__one {
+  margin: 20px auto;
+}
+
+.icon {
+  margin: 0;
+  padding: 0;
+  fill: red;
+}
