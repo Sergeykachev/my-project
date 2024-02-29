@@ -9,6 +9,10 @@ const resultpriceGrammOne = document.querySelector(".price__result-one"); // ц�
 const resultpriceGrammTwo = document.querySelector(".price__result-two"); // цена за грамм второго продукта
 const endResult = document.querySelector(".result__end"); // текстовое отображение результата
 const textInParagrath = document.querySelector(".text__result"); // отображение текста с описанием результата.
+const button = document.querySelector(".button"); //кнопка отображения результата
+const buttonResetForm = document.querySelector(".button__reset"); //кнопка сброса форм
+const form = document.querySelector(".form"); //формы
+const buttonOne = document.querySelector(".button__one");
 
 //значение инпутов
 
@@ -21,22 +25,25 @@ productsGrammsTwo = weightProductsTwo.value; //значение веса вто�
 const resultOne = productsOneValue / productsGrammsOne;
 const resultTwo = productsTwoValue / productsGrammsTwo;
 
-resultpriceGrammOne.value = resultOne; //значение цены за грамм первого продукта
-resultpriceGrammTwo.value = resultTwo; //значение цены за грамм второго продукта
-
 //расчет разницы цен
 
 const resultOneIsBig = resultOne - resultTwo;
 const resultTwoIsBig = resultTwo - resultOne;
 
-//функция сравнения цен на продукты
+resultpriceGrammOne.value = resultOne; //значение цены за грамм первого продукта
+resultpriceGrammTwo.value = resultTwo; //значение цены за грамм второго продукта
 
-if (resultOne > resultTwo) {
-  endResult.textContent = resultOneIsBig;
-  textInParagrath.textContent = "Цена за грамм первого продукта больше на:";
-} else {
-  endResult.textContent = resultTwoIsBig;
-  textInParagrath.textContent = "Цена за грамм второго продукта больше на:";
+//слушатель события по кнопке сравнения цен на продукты
+
+function result(resultOne, resultTwo) {
+  if (resultOne > resultTwo) {
+    endResult.textContent = resultOneIsBig;
+    textInParagrath.textContent = "Цена за грамм первого продукта больше на:";
+  } else {
+    endResult.textContent = resultTwoIsBig;
+    textInParagrath.textContent = "Цена за грамм второго продукта больше на:";
+  }
 }
-
+// buttonOne.addEventListener("click", one);
+button.addEventListener("click", result);
 //реализовать сравнение цен на продукты и отклонение от средней цены
