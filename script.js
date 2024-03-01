@@ -5,8 +5,8 @@ const weightProductsOne = document.querySelector(".price__for_gramms-one"); //в
 const weightProductsTwo = document.querySelector(".price__for_gramms-two"); //вес второго продукта
 const priceGrammOne = document.querySelector(".price__result-one"); //цена за грамм первого продукта
 const priceGrammTwo = document.querySelector(".price__result-two"); //цена за грамм второго продукта
-const resultpriceGrammOne = document.querySelector(".price__result-one"); // цена за грамм первого продукта
-const resultpriceGrammTwo = document.querySelector(".price__result-two"); // цена за грамм второго продукта
+let resultpriceGrammOne = document.querySelector(".price__result-one"); // цена за грамм первого продукта
+let resultpriceGrammTwo = document.querySelector(".price__result-two"); // цена за грамм второго продукта
 const endResult = document.querySelector(".result__end"); // текстовое отображение результата
 const textInParagrath = document.querySelector(".text__result"); // отображение текста с описанием результата.
 const button = document.querySelector(".button"); //кнопка отображения результата
@@ -27,11 +27,13 @@ const resultTwo = productsTwoValue / productsGrammsTwo;
 
 //расчет разницы цен
 
-const resultOneIsBig = resultOne - resultTwo;
-const resultTwoIsBig = resultTwo - resultOne;
+function one(resultOne, resultTwo) {
+  let resultOneIsBig = resultOne - resultTwo;
+  let resultTwoIsBig = resultTwo - resultOne;
 
-resultpriceGrammOne.value = resultOne; //значение цены за грамм первого продукта
-resultpriceGrammTwo.value = resultTwo; //значение цены за грамм второго продукта
+  resultpriceGrammOne.value = resultOne; //значение цены за грамм первого продукта
+  resultpriceGrammTwo.value = resultTwo; //значение цены за грамм второго продукта
+}
 
 //слушатель события по кнопке сравнения цен на продукты
 
@@ -44,6 +46,6 @@ function result(resultOne, resultTwo) {
     textInParagrath.textContent = "Цена за грамм второго продукта больше на:";
   }
 }
-// buttonOne.addEventListener("click", one);
+buttonOne.addEventListener("click", one);
 button.addEventListener("click", result);
 //реализовать сравнение цен на продукты и отклонение от средней цены
