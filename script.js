@@ -5,25 +5,14 @@ const weightProductsOne = document.querySelector(".price__for_gramms-one"); //в
 const weightProductsTwo = document.querySelector(".price__for_gramms-two"); //вес второго продукта
 const priceGrammOne = document.querySelector(".price__result-one"); //цена за грамм первого продукта
 const priceGrammTwo = document.querySelector(".price__result-two"); //цена за грамм второго продукта
-let resultpriceGrammOne = document.querySelector(".price__result-one"); // цена за грамм первого продукта
-let resultpriceGrammTwo = document.querySelector(".price__result-two"); // цена за грамм второго продукта
+const resultpriceGrammOne = document.querySelector(".price__result-one"); // цена за грамм первого продукта
+const resultpriceGrammTwo = document.querySelector(".price__result-two"); // цена за грамм второго продукта
 const endResult = document.querySelector(".result__end"); // текстовое отображение результата
 const textInParagrath = document.querySelector(".text__result"); // отображение текста с описанием результата.
 const button = document.querySelector(".button"); //кнопка отображения результата
 const buttonResetForm = document.querySelector(".button__reset"); //кнопка сброса форм
 const form = document.querySelector(".form"); //формы
 const buttonOne = document.querySelector(".button__one");
-
-//значение инпутов
-
-productsOneValue = priceForProductsOne.value; //значение цены первого продукта
-productsTwoValue = priceForProductsTwo.value; //значение цены второго продукта
-productsGrammsOne = weightProductsOne.value; //значение веса первого продукта
-productsGrammsTwo = weightProductsTwo.value; //значение веса второго продукта
-//расчет цены за грамм
-
-const resultOne = productsOneValue / productsGrammsOne;
-const resultTwo = productsTwoValue / productsGrammsTwo;
 
 //расчет разницы цен
 
