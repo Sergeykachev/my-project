@@ -1,40 +1,24 @@
-//переменные
-const priceForProductsOne = document.querySelector(".price__for_products-one"); //цена первого продукта
-const priceForProductsTwo = document.querySelector(".price__for_products-two"); //цена второго продукта
-const weightProductsOne = document.querySelector(".price__for_gramms-one"); //вес первого продукта
-const weightProductsTwo = document.querySelector(".price__for_gramms-two"); //вес второго продукта
-const priceGrammOne = document.querySelector(".price__result-one"); //цена за грамм первого продукта
-const priceGrammTwo = document.querySelector(".price__result-two"); //цена за грамм второго продукта
-const resultpriceGrammOne = document.querySelector(".price__result-one"); // цена за грамм первого продукта
-const resultpriceGrammTwo = document.querySelector(".price__result-two"); // цена за грамм второго продукта
-const endResult = document.querySelector(".result__end"); // текстовое отображение результата
-const textInParagrath = document.querySelector(".text__result"); // отображение текста с описанием результата.
-const button = document.querySelector(".button"); //кнопка отображения результата
-const buttonResetForm = document.querySelector(".button__reset"); //кнопка сброса форм
-const form = document.querySelector(".form"); //формы
-const buttonOne = document.querySelector(".button__one");
+//певый продукт
+let inputPriceOne = document.querySelector(".items__one_price");
+let inputGrammOne = document.querySelector(".items__one_gramm");
+let inputResultOne = document.querySelector(".items__one_result");
 
-//расчет разницы цен
+//второй продукт
+let inputPriceTwo = document.querySelector(".items__two_price");
+let inputGrammTwo = document.querySelector(".items__two_gramm");
+let inputResultTwo = document.querySelector(".items__two_result");
 
-function one(resultOne, resultTwo) {
-  let resultOneIsBig = resultOne - resultTwo;
-  let resultTwoIsBig = resultTwo - resultOne;
+let button = document.querySelector(".button");
 
-  resultpriceGrammOne.value = resultOne; //значение цены за грамм первого продукта
-  resultpriceGrammTwo.value = resultTwo; //значение цены за грамм второго продукта
+function price() {
+  inputPriceOne.value;
+  inputGrammOne.value;
+  inputResultOne.value = inputPriceOne.value / inputGrammOne.value;
+
+  inputPriceTwo.value;
+  inputGrammTwo.value;
+  inputResultTwo.value = inputPriceTwo.value / inputGrammTwo.value;
+  console.log(inputPriceOne.value, inputGrammOne.value, inputResultOne.value);
 }
 
-//слушатель события по кнопке сравнения цен на продукты
-
-function result(resultOne, resultTwo) {
-  if (resultOne > resultTwo) {
-    endResult.textContent = resultOneIsBig;
-    textInParagrath.textContent = "Цена за грамм первого продукта больше на:";
-  } else {
-    endResult.textContent = resultTwoIsBig;
-    textInParagrath.textContent = "Цена за грамм второго продукта больше на:";
-  }
-}
-buttonOne.addEventListener("click", one);
-button.addEventListener("click", result);
-//реализовать сравнение цен на продукты и отклонение от средней цены
+button.addEventListener("click", price);
